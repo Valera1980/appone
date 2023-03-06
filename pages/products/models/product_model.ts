@@ -21,9 +21,9 @@ export class ModelProduct implements Product {
     price = 0,
   }: Partial<Product> = {}) {
     this.id = id;
-    this.description = description;
-    this.name = name;
-    this.price = price;
+    this.description = description?.length ? description : "";
+    this.name = name?.length ? name : "";
+    this.price = isNaN(price) ? 0 : price;
   }
   print(): string {
     return `id = ${this.id}}; name = ${this.name}; description = ${this.description}; price = ${this.price}`;
