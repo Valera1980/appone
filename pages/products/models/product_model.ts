@@ -1,4 +1,4 @@
-import { Nullable } from "./nullable_model";
+import { Nullable } from "../../models/nullable_model";
 export interface Product {
   readonly id: Nullable<number>;
   readonly name: string;
@@ -24,5 +24,8 @@ export class ModelProduct implements Product {
     this.description = description;
     this.name = name;
     this.price = price;
+  }
+  print(): string {
+    return `id = ${this.id}}; name = ${this.name}; description = ${this.description}; price = ${this.price}`;
   }
 }
